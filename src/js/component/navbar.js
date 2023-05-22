@@ -1,16 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
-			<Link to="/">
-				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-			</Link>
-			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
-				</Link>
+			<div clasName="container-fluid mb-3">
+				<h3 className="fs-3 mx-4"><i className="fas fa-address-book"></i></h3><h3>Mi agenda </h3>
 			</div>
 		</nav>
 	);

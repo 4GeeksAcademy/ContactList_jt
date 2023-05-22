@@ -55,11 +55,17 @@ export const Register = () => {
 						<input type="phone" className="form-control" id="phone" placeholder="Teléfono" onChange={handleChange}/>
 					</div>
 				
-					<button type="submit" className="btn btn-primary btn-lg" role="button">
+					<button type="submit" className="btn btn-primary mt-3" role="button">
 						Registrar Empresa
 					</button>
 				</div>
 			</form>
+			
+			<div className="col-8 m-auto mt-2">
+			<Link to="/"><button type="button" className="btn btn-light">
+					Volver a contactos
+				</button></Link>
+				</div>
 		</>
 	);
 };
