@@ -33,7 +33,7 @@ export const Register = () => {
 		<>
 			<form onSubmit={handleSubmit}>
 				<div className="col-8 m-auto">
-				<h2 className="display-6 text-primary"> Registro de Empresas </h2>
+				<h3 className="display-6 text-primary"> Datos del contacto </h3>
 					<div className="mb-3">
 						<label htmlFor="name" className="form-label">Nombre</label>
 						<input type="text" className="form-control" id="full_name" placeholder="Name" onChange={handleChange} />
