@@ -1,6 +1,8 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			contacts: [],
+			
 			demo: [
 				{
 					title: "FIRST",
@@ -12,8 +14,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+
 		},
+
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
@@ -37,7 +41,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
-			}
+			},
+
+			loadContacts: () => {
+
+				fetch("https://assets.breatheco.de/apis/fake/contact/agenda/The_Agenda")
+					.then(response => response.json())
+					.then((response)=> {
+						console.log(response)
+						setStore({ contacts: response.results });
+				})
+			},
+
 		}
 	};
 };

@@ -7,7 +7,7 @@ export const Register = () => {
 	const  [data, setData] = useState({})
 
 	const handleChange = (event) => {
-		setData({...data, [event.target.id]: event.target.value})
+		setData({...data, [event.target.id]: event.target.value, agenda_slug: 'The_Agenda'})
 	}
 
 	const handleSubmit = (event) => {
@@ -43,10 +43,6 @@ export const Register = () => {
 						<input type="text" className="form-control" id="email" placeholder="Email" onChange={handleChange}/>
 					</div>
 					<div className="mb-3">
-						<label htmlFor="agenda_slug" className="form-label">Agenda Slug</label>
-						<input type="text" className="form-control" id="agenda_slug" placeholder="Agenda Slug" onChange={handleChange} />
-					</div>
-					<div className="mb-3">
 						<label htmlFor="Address" className="Dirección">Dirección</label>
 						<input type="text" className="form-control" id="address" placeholder="Dirección" onChange={handleChange}/>
 					</div>
@@ -56,7 +52,7 @@ export const Register = () => {
 					</div>
 				
 					<button type="submit" className="btn btn-primary mt-3" role="button">
-						Registrar Empresa
+						Registrar Contacto
 					</button>
 				</div>
 			</form>
