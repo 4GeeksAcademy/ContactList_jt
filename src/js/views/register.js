@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
+ 
 
 export const Register = () => {
 
-	const  [data, setData] = useState({})
+	const {actions} = useContext(Context)
+	const [data, setData] = useState({})
+	const navigate = useNavigate()
 
 	const handleChange = (event) => {
 		setData({...data, [event.target.id]: event.target.value, agenda_slug: 'The_Agenda'})
@@ -20,13 +23,17 @@ export const Register = () => {
 			headers: { 
 				'Content-Type': 'application/json'
 			}
-		
 		}
 
 		fetch("https://assets.breatheco.de/apis/fake/contact/", config)
-		.then(res => res.json())
-		.catch(error => console.error('Eror:', error))
-		.then(response => console.log('Success:', response));		
+			.then((res) => res.json())
+			.then((response) => {
+				console.log('Success:', response);
+				actions.loadContacts();
+			})
+			.catch(error => console.error('Error:', error));
+
+		navigate ('/');		
 	}
 
 	return (
